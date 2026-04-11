@@ -41,8 +41,6 @@ enabling early detection and fast diagnosis assistance.
 ## Dataset
 - Kaggle: Skin Diseases + Cancer Comprehensive Dataset
 
-## Key Findings
-- Acne & Melanoma: AUC 1.00 (완벽한 분류)
-- Infestations/Bites: AUC 0.95 (가장 낮음)
-- 제한된 데이터 범위로 인해 다양한 임상 환경 적용에 한계 존재
-- 향후 고품질 대규모 데이터셋 확보 및 모델 고도화 예정
+## Limitations & Future Work
+- The limited data scope constrains generalizability to diverse clinical settings  
+- Future work will focus on acquiring large-scale, high-quality datasets and enhancing model performance  
