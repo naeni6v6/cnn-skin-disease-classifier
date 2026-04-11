@@ -1,4 +1,4 @@
-# CNN-Based Skin Disease Classification Model
+🩺# CNN-Based Skin Disease Classification Model
 
 ## Overview
 This project presents a CNN-based deep learning model for classifying major skin diseases.  
