@@ -1,29 +1,22 @@
-🩺# CNN-Based Skin Disease Classification Model
+# 🩺 Development of a CNN-based Skin Disease Classification Model
 
 ## Overview
-This project presents a CNN-based deep learning model for classifying major skin diseases.  
-The objective is to support early detection and assist rapid diagnosis in clinical scenarios.
-
----
+A CNN-based deep learning model to classify major skin diseases,  
+enabling early detection and fast diagnosis assistance.
 
 ## Target Classes
 | Class | Samples |
 |-------|---------|
-| Acne | 593 |
-| Eczema | 1,010 |
-| Infestations/Bites | 524 |
-| Melanoma | 438 |
+| Acne (여드름) | 593 |
+| Eczema (습진) | 1,010 |
+| Infestations/Bites (기생충감염/벌레물림) | 524 |
+| Melanoma (흑색종) | 438 |
 
----
-
-## Model Architecture
-- CNN-based model with Transfer Learning
-- 3-stage fine-tuning strategy:
-  - Stage 1: Frozen base training (50 epochs)
-  - Stage 2: Partial fine-tuning (50 epochs)
-  - Stage 3: Full fine-tuning (50 epochs)
-
----
+## Model
+- Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
+- Stage 1: Frozen Base Training (50 epochs)
+- Stage 2: Partial Fine-tuning (50 epochs)
+- Stage 3: Full Fine-tuning (50 epochs)
 
 ## Results
 | Metric | Score |
@@ -40,33 +33,16 @@ The objective is to support early detection and assist rapid diagnosis in clinic
 | Infestations/Bites | 0.8000 |
 | Melanoma | 1.0000 |
 
----
-
 ## Tech Stack
-- Python
-- TensorFlow / Keras
-- Transfer Learning
-- Data Augmentation
-- Grad-CAM
-- ROC Curve
-- Confusion Matrix
-
----
+- Python, TensorFlow/Keras
+- Transfer Learning, Data Augmentation
+- Grad-CAM, ROC Curve, Confusion Matrix
 
 ## Dataset
 - Kaggle: Skin Diseases + Cancer Comprehensive Dataset
 
----
-
-## Key Insights
-- Achieved high classification performance with Macro AUC of 0.98
-- Acne and Melanoma showed near-perfect classification performance (AUC = 1.00)
-- Infestations/Bites showed relatively lower performance (AUC = 0.95)
-- Limited dataset size may affect generalization to diverse clinical environments
-
----
-
-## Future Work
-- Expand dataset size and diversity
-- Improve model generalization in real-world scenarios
-- Explore advanced architectures and ensemble methods
+## Key Findings
+- Acne & Melanoma: AUC 1.00 (완벽한 분류)
+- Infestations/Bites: AUC 0.95 (가장 낮음)
+- 제한된 데이터 범위로 인해 다양한 임상 환경 적용에 한계 존재
+- 향후 고품질 대규모 데이터셋 확보 및 모델 고도화 예정
