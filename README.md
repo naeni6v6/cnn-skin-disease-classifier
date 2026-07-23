@@ -17,6 +17,8 @@
   Classifying 7 major skin conditions — evolved from an in-school baseline (v1) into a research program (v2) with rigorous data curation, de-duplication, and leakage control.
 </p>
 
+<br>
+
 ## 📌 Overview
 
 A CNN-based deep learning model to classify major skin diseases,
@@ -27,14 +29,14 @@ scope and reliability lacking, it was extended into a **follow-up research
 program (v2)** — expanding the class set, scaling up the data, and adding
 rigorous data-quality control to make the results trustworthy.
 
----
-
-
 <br>
+
+---
 
 ## v1 — In-School Competition (Baseline)
 
 <br>
+
 ### Target Classes
 
 | Class | Samples |
@@ -76,14 +78,14 @@ non-disease), class imbalance, overfitting, and — most importantly — a suspi
 Melanoma F1 of 1.0000 that later turned out to be **data leakage** from
 capture-method bias. These motivated v2.
 
----
-
 <br>
 
+---
 
 ## v2 — Research Program (Extended)
 
 <br>
+
 ### Target Classes (4 → 7)
 
 | Class | Samples |
@@ -100,7 +102,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 🔍 Data Curation & Quality Control
+### Data Curation & Quality Control
 
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
   (e.g. atopic → Eczema; perioral dermatitis → Acne). Rosacea and benign nevi excluded.
@@ -153,8 +155,6 @@ capture-method bias. These motivated v2.
 </td>
 </tr>
 </table>
-
----
 
 <br>
 
