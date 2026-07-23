@@ -29,13 +29,14 @@ rigorous data-quality control to make the results trustworthy.
 
 ---
 
+
 <br>
 
 ## v1 — In-School Competition (Baseline)
 
 <br>
 
-### 🧫 Target Classes
+### Target Classes
 
 | Class | Samples |
 |-------|---------|
@@ -46,7 +47,7 @@ rigorous data-quality control to make the results trustworthy.
 
 <br>
 
-### 🧠 Model
+### Model
 
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
@@ -80,11 +81,12 @@ capture-method bias. These motivated v2.
 
 <br>
 
+
 ## v2 — Research Program (Extended)
 
 <br>
 
-### 🧬 Target Classes (4 → 7)
+### Target Classes (4 → 7)
 
 | Class | Samples |
 |-------|---------|
@@ -110,7 +112,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 🧠 Model
+### Model
 
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
 - Architecture: **EfficientNetV2-S** (timm pretrained)
