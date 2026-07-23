@@ -35,7 +35,6 @@ rigorous data-quality control to make the results trustworthy.
 ## v1 — In-School Competition (Baseline)
 
 <br>
-
 ### Target Classes
 
 | Class | Samples |
@@ -85,7 +84,6 @@ capture-method bias. These motivated v2.
 ## v2 — Research Program (Extended)
 
 <br>
-
 ### Target Classes (4 → 7)
 
 | Class | Samples |
