@@ -17,9 +17,7 @@
   Classifying 7 major skin conditions — evolved from an in-school baseline (v1) into a research program (v2) with rigorous data curation, de-duplication, and leakage control.
 </p>
 
-<br>
-
-## 📌 Overview
+## Overview
 
 A CNN-based deep learning model to classify major skin diseases,
 enabling early detection and fast diagnosis assistance.
@@ -29,17 +27,13 @@ scope and reliability lacking, it was extended into a **follow-up research
 program (v2)** — expanding the class set, scaling up the data, and adding
 rigorous data-quality control to make the results trustworthy.
 
-<br>
-
 ---
 
-<br>
-
-## 🥉 v1 — In-School Competition (Baseline)
+## v1 — In-School Competition (Baseline)
 
 <br>
 
-### 🧫 Target Classes
+### Target Classes
 
 | Class | Samples |
 |-------|---------|
@@ -50,14 +44,14 @@ rigorous data-quality control to make the results trustworthy.
 
 <br>
 
-### 🧠 Model
+### Model
 
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
 
 <br>
 
-### 📊 Results
+### Results
 
 <table>
 <tr>
@@ -80,17 +74,13 @@ non-disease), class imbalance, overfitting, and — most importantly — a suspi
 Melanoma F1 of 1.0000 that later turned out to be **data leakage** from
 capture-method bias. These motivated v2.
 
-<br>
-
 ---
 
-<br>
-
-## 🚀 v2 — Research Program (Extended)
+## v2 — Research Program (Extended)
 
 <br>
 
-### 🧬 Target Classes (4 → 7)
+### Target Classes (4 → 7)
 
 | Class | Samples |
 |-------|---------|
@@ -106,7 +96,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 🔍 Data Curation & Quality Control
+### Data Curation & Quality Control
 
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
   (e.g. atopic → Eczema; perioral dermatitis → Acne). Rosacea and benign nevi excluded.
@@ -116,7 +106,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 🧠 Model
+### Model
 
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
 - Architecture: **EfficientNetV2-S** (timm pretrained)
@@ -125,7 +115,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 📊 Results (held-out test, 3,059 images)
+### Results (held-out test, 3,059 images)
 
 | Metric | Score |
 |--------|-------|
@@ -137,7 +127,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-### 📈 Per-class F1-score
+### Per-class F1-score
 
 <table>
 <tr>
@@ -160,13 +150,9 @@ capture-method bias. These motivated v2.
 </tr>
 </table>
 
-<br>
-
 ---
 
-<br>
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python, PyTorch, timm (v2) · TensorFlow/Keras (v1)
 - Transfer Learning, Data Augmentation, pHash de-duplication
@@ -174,7 +160,7 @@ capture-method bias. These motivated v2.
 
 <br>
 
-## 📂 Dataset Sources
+## Dataset Sources
 
 Aggregated from ~15 public datasets (Kaggle & Roboflow), then merged, de-duplicated,
 and re-labeled into 7 classes (~21K images after cleaning).
@@ -206,7 +192,7 @@ and re-labeled into 7 classes (~21K images after cleaning).
 
 <br>
 
-## ⚠️ Limitations & Future Work
+## Limitations & Future Work
 
 - Capture-method bias remains a dataset-level limitation (some classes separable by
   source rather than lesion) — documented, not fully solvable in code
