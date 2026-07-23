@@ -1,4 +1,21 @@
-# 🩺 CNN-based Skin Disease Classification Model
+<h1 align="center">🩺 CNN-based Skin Disease Classification</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Model-EfficientNetV2S-0066CC?style=for-the-badge" alt="EfficientNetV2S">
+  <img src="https://img.shields.io/badge/Test_Accuracy-88.62%25-success?style=for-the-badge" alt="Accuracy 88.62%">
+  <img src="https://img.shields.io/badge/Macro_F1-0.8906-success?style=for-the-badge" alt="Macro-F1 0.8906">
+  <img src="https://img.shields.io/badge/Classes-7-success?style=for-the-badge" alt="7 classes">
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/timm-000000?style=flat" alt="timm">
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white" alt="TensorFlow">
+  <img src="https://img.shields.io/badge/Keras-D00000?logo=keras&logoColor=white" alt="Keras">
+  <img src="https://img.shields.io/badge/images-21K-lightgrey" alt="21K images">
+</p>
+<p align="center">
+  Classifying 7 major skin conditions — evolved from an in-school baseline (v1) into a research program (v2) with rigorous data curation, de-duplication, and leakage control.
+</p>
 
 ## Overview
 A CNN-based deep learning model to classify major skin diseases,
