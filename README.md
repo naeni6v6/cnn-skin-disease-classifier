@@ -17,7 +17,7 @@
   Classifying 7 major skin conditions — evolved from an in-school baseline (v1) into a research program (v2) with rigorous data curation, de-duplication, and leakage control.
 </p>
 
-## Overview
+## 📌 Overview
 
 A CNN-based deep learning model to classify major skin diseases,
 enabling early detection and fast diagnosis assistance.
@@ -33,7 +33,9 @@ rigorous data-quality control to make the results trustworthy.
 
 ## v1 — In-School Competition (Baseline)
 
-### Target Classes
+<br>
+
+### 🧫 Target Classes
 
 | Class | Samples |
 |-------|---------|
@@ -42,12 +44,16 @@ rigorous data-quality control to make the results trustworthy.
 | Infestations/Bites (기생충감염/벌레물림) | 524 |
 | Melanoma (흑색종) | 438 |
 
-### Model
+<br>
+
+### 🧠 Model
 
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
 
-### Results
+<br>
+
+### 📊 Results
 
 <table>
 <tr>
@@ -76,7 +82,9 @@ capture-method bias. These motivated v2.
 
 ## v2 — Research Program (Extended)
 
-### Target Classes (4 → 7)
+<br>
+
+### 🧬 Target Classes (4 → 7)
 
 | Class | Samples |
 |-------|---------|
@@ -90,7 +98,9 @@ capture-method bias. These motivated v2.
 
 *\*Eczema under-sampled from 12,042 → 4,000.*
 
-### Data Curation & Quality Control
+<br>
+
+### 🔍 Data Curation & Quality Control
 
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
   (e.g. atopic → Eczema; perioral dermatitis → Acne). Rosacea and benign nevi excluded.
@@ -98,14 +108,18 @@ capture-method bias. These motivated v2.
 - pHash group-split so identical images never leak across train/val/test
 - Diagnosed capture-method bias as the cause of v1's inflated Melanoma score
 
-### Model
+<br>
+
+### 🧠 Model
 
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
 - Architecture: **EfficientNetV2-S** (timm pretrained)
 - Backbone-freeze warmup → full fine-tuning, cosine LR, early stopping
 - Overfitting control: Dropout, stochastic depth, weight decay, label smoothing, strong augmentation
 
-### Results (held-out test, 3,059 images)
+<br>
+
+### 📊 Results (held-out test, 3,059 images)
 
 | Metric | Score |
 |--------|-------|
@@ -115,7 +129,9 @@ capture-method bias. These motivated v2.
 > The lower headline number vs. v1 is intentional: with duplicates removed and
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
-### Per-class F1-score
+<br>
+
+### 📈 Per-class F1-score
 
 <table>
 <tr>
@@ -140,13 +156,17 @@ capture-method bias. These motivated v2.
 
 ---
 
-## Tech Stack
+<br>
+
+## 🛠️ Tech Stack
 
 - Python, PyTorch, timm (v2) · TensorFlow/Keras (v1)
 - Transfer Learning, Data Augmentation, pHash de-duplication
 - Grad-CAM, ROC Curve, Confusion Matrix
 
-## Dataset Sources
+<br>
+
+## 📂 Dataset Sources
 
 Aggregated from ~15 public datasets (Kaggle & Roboflow), then merged, de-duplicated,
 and re-labeled into 7 classes (~21K images after cleaning).
@@ -181,7 +201,9 @@ and re-labeled into 7 classes (~21K images after cleaning).
 
 </details>
 
-## Limitations & Future Work
+<br>
+
+## ⚠️ Limitations & Future Work
 
 - Capture-method bias remains a dataset-level limitation (some classes separable by
   source rather than lesion) — documented, not fully solvable in code
