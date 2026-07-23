@@ -93,6 +93,7 @@ capture-method bias. These motivated v2.
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
 #### Per-class F1-score
+![v2 output](v2_output.png)
 | Class | F1-score |
 |-------|----------|
 | Normal | 0.9795 |
