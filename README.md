@@ -30,9 +30,7 @@ rigorous data-quality control to make the results trustworthy.
 ---
 
 ## v1 — In-School Competition (Baseline)
-
 <br>
-
 ### Target Classes
 
 | Class | Samples |
@@ -45,12 +43,10 @@ rigorous data-quality control to make the results trustworthy.
 <br>
 
 ### Model
-
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
 
 <br>
-
 ### Results
 
 <table>
@@ -79,7 +75,6 @@ capture-method bias. These motivated v2.
 ## v2 — Research Program (Extended)
 
 <br>
-
 ### Target Classes (4 → 7)
 
 | Class | Samples |
@@ -95,7 +90,6 @@ capture-method bias. These motivated v2.
 *\*Eczema under-sampled from 12,042 → 4,000.*
 
 <br>
-
 ### Data Curation & Quality Control
 
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
@@ -105,7 +99,6 @@ capture-method bias. These motivated v2.
 - Diagnosed capture-method bias as the cause of v1's inflated Melanoma score
 
 <br>
-
 ### Model
 
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
@@ -114,7 +107,6 @@ capture-method bias. These motivated v2.
 - Overfitting control: Dropout, stochastic depth, weight decay, label smoothing, strong augmentation
 
 <br>
-
 ### Results (held-out test, 3,059 images)
 
 | Metric | Score |
@@ -126,7 +118,6 @@ capture-method bias. These motivated v2.
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
 <br>
-
 ### Per-class F1-score
 
 <table>
@@ -159,7 +150,6 @@ capture-method bias. These motivated v2.
 - Grad-CAM, ROC Curve, Confusion Matrix
 
 <br>
-
 ## Dataset Sources
 
 Aggregated from ~15 public datasets (Kaggle & Roboflow), then merged, de-duplicated,
@@ -191,7 +181,6 @@ and re-labeled into 7 classes (~21K images after cleaning).
 </details>
 
 <br>
-
 ## Limitations & Future Work
 
 - Capture-method bias remains a dataset-level limitation (some classes separable by
