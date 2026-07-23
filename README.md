@@ -29,8 +29,10 @@ rigorous data-quality control to make the results trustworthy.
 
 ---
 
-## v1 — In-School Competition (Baseline)
 <br>
+
+## v1 — In-School Competition (Baseline)
+
 ### Target Classes
 
 | Class | Samples |
@@ -40,13 +42,11 @@ rigorous data-quality control to make the results trustworthy.
 | Infestations/Bites (기생충감염/벌레물림) | 524 |
 | Melanoma (흑색종) | 438 |
 
-<br>
-
 ### Model
+
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
 
-<br>
 ### Results
 
 <table>
@@ -72,9 +72,10 @@ capture-method bias. These motivated v2.
 
 ---
 
+<br>
+
 ## v2 — Research Program (Extended)
 
-<br>
 ### Target Classes (4 → 7)
 
 | Class | Samples |
@@ -89,7 +90,6 @@ capture-method bias. These motivated v2.
 
 *\*Eczema under-sampled from 12,042 → 4,000.*
 
-<br>
 ### Data Curation & Quality Control
 
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
@@ -98,7 +98,6 @@ capture-method bias. These motivated v2.
 - pHash group-split so identical images never leak across train/val/test
 - Diagnosed capture-method bias as the cause of v1's inflated Melanoma score
 
-<br>
 ### Model
 
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
@@ -106,7 +105,6 @@ capture-method bias. These motivated v2.
 - Backbone-freeze warmup → full fine-tuning, cosine LR, early stopping
 - Overfitting control: Dropout, stochastic depth, weight decay, label smoothing, strong augmentation
 
-<br>
 ### Results (held-out test, 3,059 images)
 
 | Metric | Score |
@@ -117,7 +115,6 @@ capture-method bias. These motivated v2.
 > The lower headline number vs. v1 is intentional: with duplicates removed and
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
-<br>
 ### Per-class F1-score
 
 <table>
@@ -149,7 +146,6 @@ capture-method bias. These motivated v2.
 - Transfer Learning, Data Augmentation, pHash de-duplication
 - Grad-CAM, ROC Curve, Confusion Matrix
 
-<br>
 ## Dataset Sources
 
 Aggregated from ~15 public datasets (Kaggle & Roboflow), then merged, de-duplicated,
@@ -158,19 +154,24 @@ and re-labeled into 7 classes (~21K images after cleaning).
 <details>
 <summary>Full source list</summary>
 
+<br>
+
 **Core disease images (DermNet-derived)**
+
 - [lysaapriani/skin-disease-and-normal-skin-dataset](https://www.kaggle.com/datasets/lysaapriani/skin-disease-and-normal-skin-dataset)
 - [pacificrm/skindiseasedataset](https://www.kaggle.com/datasets/pacificrm/skindiseasedataset)
 - [ismailpromus/skin-diseases-image-dataset](https://www.kaggle.com/datasets/ismailpromus/skin-diseases-image-dataset)
 - *shubhamgoel27/dermnet — skipped (duplicate of the above)*
 
 **Normal skin**
+
 - [ahdasdwdasd/our-normal-skin](https://www.kaggle.com/datasets/ahdasdwdasd/our-normal-skin)
 - [dipuiucse/monkeypox-skin-images](https://www.kaggle.com/datasets/dipuiucse/monkeypoxskinimagedataset) (normal subset)
 - [shakyadissanayake/oily-dry-and-normal-skin-types](https://www.kaggle.com/datasets/shakyadissanayake/oily-dry-and-normal-skin-types-dataset)
 - [sd20co001/image-dataset-for-skin-diseases](https://www.kaggle.com/datasets/sd20co001/image-dataset-for-skindiseases-dry-oily-normalskin) (normal / acne / eczema)
 
 **Per-class augmentation**
+
 - [anieetorudofia/skin-diseases-cancer-comprehensive](https://www.kaggle.com/datasets/anieetorudofia/skin-diseases-cancer-comprehensive-dataset) (all 7 classes)
 - [youssefmohmmed/human-skin-diseases-image](https://www.kaggle.com/datasets/youssefmohmmed/human-skin-diseases-image) (6 classes, no melanoma)
 - [tapakah68/skin-problems-34-on-the-iga-scale](https://www.kaggle.com/datasets/tapakah68/skin-problems-34-on-the-iga-scale) (acne)
@@ -180,7 +181,6 @@ and re-labeled into 7 classes (~21K images after cleaning).
 
 </details>
 
-<br>
 ## Limitations & Future Work
 
 - Capture-method bias remains a dataset-level limitation (some classes separable by
