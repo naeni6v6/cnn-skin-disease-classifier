@@ -93,7 +93,11 @@ capture-method bias. These motivated v2.
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
 #### Per-class F1-score
-![v2 output](v2_output.png)
+
+<table>
+<tr>
+<td valign="top">
+
 | Class | F1-score |
 |-------|----------|
 | Normal | 0.9795 |
@@ -104,6 +108,12 @@ capture-method bias. These motivated v2.
 | Psoriasis | 0.7988 |
 | Fungal Infection | 0.8203 |
 
+</td>
+<td valign="top">
+<img src="v2_output.png" alt="v2 output" width="650">
+</td>
+</tr>
+</table>
 ---
 
 ## 🛠️ Tech Stack
