@@ -17,7 +17,10 @@
   Classifying 7 major skin conditions — evolved from an in-school baseline (v1) into a research program (v2) with rigorous data curation, de-duplication, and leakage control.
 </p>
 
-## Overview
+<br>
+
+## 📌 Overview
+
 A CNN-based deep learning model to classify major skin diseases,
 enabling early detection and fast diagnosis assistance.
 
@@ -26,11 +29,18 @@ scope and reliability lacking, it was extended into a **follow-up research
 program (v2)** — expanding the class set, scaling up the data, and adding
 rigorous data-quality control to make the results trustworthy.
 
+<br>
+
 ---
 
-## v1 — In-School Competition (Baseline)
+<br>
 
-### Target Classes
+## 🥉 v1 — In-School Competition (Baseline)
+
+<br>
+
+### 🧫 Target Classes
+
 | Class | Samples |
 |-------|---------|
 | Acne (여드름) | 593 |
@@ -38,26 +48,50 @@ rigorous data-quality control to make the results trustworthy.
 | Infestations/Bites (기생충감염/벌레물림) | 524 |
 | Melanoma (흑색종) | 438 |
 
-### Model
+<br>
+
+### 🧠 Model
+
 - Architecture: CNN (Transfer Learning, 3-stage fine-tuning)
 - Stage 1: Frozen Base Training / Stage 2: Partial / Stage 3: Full Fine-tuning
 
-### Results
+<br>
+
+### 📊 Results
+
+<table>
+<tr>
+<td valign="top">
+
 | Metric | Score |
 |--------|-------|
 | Best Validation Accuracy | 94.04% |
 | Macro-average AUC | 0.98 |
+
+</td>
+<td valign="top">
+<img src="v1_Confusion_Matrix.png" alt="v1 confusion matrix" width="520">
+</td>
+</tr>
+</table>
 
 **Limitations found:** no "normal skin" class (cannot tell disease from
 non-disease), class imbalance, overfitting, and — most importantly — a suspicious
 Melanoma F1 of 1.0000 that later turned out to be **data leakage** from
 capture-method bias. These motivated v2.
 
+<br>
+
 ---
 
-## v2 — Research Program (Extended)
+<br>
 
-### Target Classes (4 → 7)
+## 🚀 v2 — Research Program (Extended)
+
+<br>
+
+### 🧬 Target Classes (4 → 7)
+
 | Class | Samples |
 |-------|---------|
 | Normal (정상) | 1,331 |
@@ -70,20 +104,29 @@ capture-method bias. These motivated v2.
 
 *\*Eczema under-sampled from 12,042 → 4,000.*
 
+<br>
+
 ### 🔍 Data Curation & Quality Control
+
 - Consolidated scattered sub-diagnoses into 7 classes by clinical/visual features
   (e.g. atopic → Eczema; perioral dermatitis → Acne). Rosacea and benign nevi excluded.
 - **Removed 7,873 duplicate images (≈33%)** via pHash near-duplicate detection
 - pHash group-split so identical images never leak across train/val/test
 - Diagnosed capture-method bias as the cause of v1's inflated Melanoma score
 
-### Model
+<br>
+
+### 🧠 Model
+
 - Framework: **PyTorch** (migrated from Keras/TensorFlow)
 - Architecture: **EfficientNetV2-S** (timm pretrained)
 - Backbone-freeze warmup → full fine-tuning, cosine LR, early stopping
 - Overfitting control: Dropout, stochastic depth, weight decay, label smoothing, strong augmentation
 
-### Results (held-out test, 3,059 images)
+<br>
+
+### 📊 Results (held-out test, 3,059 images)
+
 | Metric | Score |
 |--------|-------|
 | Accuracy | 88.62% |
@@ -92,7 +135,9 @@ capture-method bias. These motivated v2.
 > The lower headline number vs. v1 is intentional: with duplicates removed and
 > leakage blocked, this is a **more honest and generalizable** evaluation.
 
-#### Per-class F1-score
+<br>
+
+### 📈 Per-class F1-score
 
 <table>
 <tr>
@@ -114,14 +159,23 @@ capture-method bias. These motivated v2.
 </td>
 </tr>
 </table>
+
+<br>
+
 ---
 
+<br>
+
 ## 🛠️ Tech Stack
+
 - Python, PyTorch, timm (v2) · TensorFlow/Keras (v1)
 - Transfer Learning, Data Augmentation, pHash de-duplication
 - Grad-CAM, ROC Curve, Confusion Matrix
 
+<br>
+
 ## 📂 Dataset Sources
+
 Aggregated from ~15 public datasets (Kaggle & Roboflow), then merged, de-duplicated,
 and re-labeled into 7 classes (~21K images after cleaning).
 
@@ -150,7 +204,10 @@ and re-labeled into 7 classes (~21K images after cleaning).
 
 </details>
 
+<br>
+
 ## ⚠️ Limitations & Future Work
+
 - Capture-method bias remains a dataset-level limitation (some classes separable by
   source rather than lesion) — documented, not fully solvable in code
 - Melanoma class covers malignant lesions only; benign nevi/moles were excluded, so
